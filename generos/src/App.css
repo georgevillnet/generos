@@ -1,111 +1,111 @@
 body{
 
-    background-color: #363636;
+  background-color: #363636;
 
 }
 .generoscontainer {
-    text-align: center;
-    margin: 20px;
-    
-    margin: 0%;
-  }
+  text-align: center;
+  margin: 20px;
   
-  .titulogeneros {
-    font-size: 64px;
-    margin-bottom: 20px;
-    color: #EBCCA6;
-    font-family: 'Inter', sans-serif;
-  font-weight: 900;
-  word-wrap: break-word;
-    
-  }
-  
-  .cardcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .cards {
-    background-color: #1F1F1F;
-    padding: 20px;
-    width: 200px;
-    border-radius: 16.73px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 3px solid #EBCCA6;
-    color: #EBCCA6;
-    margin-top: 40px;
-    -webkit-border-radius: 16.73px;
-    -moz-border-radius: 16.73px;
-    -ms-border-radius: 16.73px;
-    -o-border-radius: 16.73px;
+  margin: 0%;
 }
+
+.titulogeneros {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #EBCCA6;
+  font-family: 'Inter', sans-serif;
+font-weight: 900;
+word-wrap: break-word;
   
-  .cardtitle {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .cardimage {
-    width: 150px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    background-color: #D9D9D9;
+}
+
+.cardcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards {
+  background-color: #1F1F1F;
+  padding: 20px;
+  width: 200px;
+  border-radius: 16.73px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 3px solid #EBCCA6;
+  color: #EBCCA6;
+  margin-top: 40px;
+  -webkit-border-radius: 16.73px;
+  -moz-border-radius: 16.73px;
+  -ms-border-radius: 16.73px;
+  -o-border-radius: 16.73px;
+}
+
+.cardtitle {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.cardimage {
+  width: 150px;
+  height: 140px;
   border-radius: 50%;
-  border: 4.04px solid white;
+  object-fit: cover;
+  margin-bottom: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #D9D9D9;
+border-radius: 50%;
+border: 4.04px solid white;
 }
-  
- 
-  
-  .modifybutton {
-    color: black;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  word-wrap: break-word;
-  background-color: #FFCD8F;
-  border-radius: 20.19px;
-  width: 110px;
-  border: none;
-  }
-  .deletebutton{
-    color: rgb(0, 0, 0);
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  word-wrap: break-word;
-  background-color: #ffffff;
-  border-radius: 20.19px;
-  width: 110px;
-  border: none;
-  margin-top: 12px;
+
+
+
+.modifybutton {
+  color: black;
+font-size: 16px;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+word-wrap: break-word;
+background-color: #FFCD8F;
+border-radius: 20.19px;
+width: 110px;
+border: none;
 }
+.deletebutton{
+  color: rgb(0, 0, 0);
+font-size: 16px;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+word-wrap: break-word;
+background-color: #ffffff;
+border-radius: 20.19px;
+width: 110px;
+border: none;
+margin-top: 12px;
+}
+
+
+.createbutton {
+  margin-top: 80px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+word-wrap: break-word;
   
-  
-  .createbutton {
-    margin-top: 80px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  word-wrap: break-word;
-    
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-color: #D9D9D9;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-color: #D9D9D9;
 }

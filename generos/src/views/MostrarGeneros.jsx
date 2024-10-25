@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { getGeneros } from '../controllers/apiController';
+import { deleteGenero, getGeneros } from '../controllers/apiController';
 import '../App.css';
 
-const GenerosCard = () => {
+const MostrarGeneros = () => {
   const [genres, setGenres] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const recogerGeneros = () => {
     getGeneros()
       .then(data => setGenres(data))
       .catch(error => console.error('Error fetching genres:', error));
+  }
+
+  useEffect(() => {
+    recogerGeneros();
   }, []);
 
-  const handleSelectTab = (key) => {
+  const handleCreate = (key) => {
     navigate('/crearGenero');
   };
+
+  const handleDelete = (id) => {
+    deleteGenero(id)
+      .then(() => recogerGeneros())
+      .catch((error) => console.error('Error al crear un nuevo género', error));
+  }
+
+  const handleEdit = (genero) => {
+    navigate('/modificarGenero', { state: { selectedGenero: genero } })
+  }
 
   return (
     <>
@@ -41,6 +55,7 @@ const GenerosCard = () => {
     </div>
         </>
   );
+
 };
 
-export default GenerosCard;
+export default MostrarGeneros;
