@@ -25,9 +25,9 @@ const GenerosCard = () => {
       <div className="card-content">
         <h3 className="card-title">{genre.nombreGenero}</h3>
       </div>
-      <button onClick={handleSelectTab}>Crear nuevo género</button>
     </div>
     ))}
+      <button onClick={handleSelectTab}>Crear nuevo género</button>
 
     <Outlet />
     </>
