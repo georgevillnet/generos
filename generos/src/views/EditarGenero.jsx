@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function EditarGenero() {
     const location = useLocation();
+    const navigate = useNavigate();
     const { selectedGenero } = location.state || {};
     const defaultIdGenero = selectedGenero.id;
     const defaultNombreGenero = selectedGenero.nombreGenero;
@@ -14,10 +15,13 @@ function EditarGenero() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateGenero(defaultIdGenero, {defaultIdGenero, nombreGenero, urlImagen })
-        .then(() => navigate('/'))
-            .catch((error) => console.error('Error al crear un nuevo género', error));
-    }
+        const genero = { NombreGenero: nombreGenero, UrlImagen: urlImagen };
+        
+        updateGenero(defaultIdGenero, genero)
+            .then(() => navigate('/'))
+            .catch((error) => console.error('Error al actualizar género', error));
+    };   
+    
 
     return (
         <>

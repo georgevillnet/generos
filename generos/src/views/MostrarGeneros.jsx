@@ -17,7 +17,8 @@ const MostrarGeneros = () => {
     recogerGeneros();
   }, []);
 
-  const handleCreate = (key) => {
+  const handleCreate = () => {
+    console.log("has pulsado en crear")
     navigate('/crearGenero');
   };
 
@@ -33,8 +34,6 @@ const MostrarGeneros = () => {
 
   return (
     <>
-    
-    
     <div className="generoscontainer">
       <h1 className="titulogeneros">Géneros</h1>
       
@@ -43,16 +42,17 @@ const MostrarGeneros = () => {
           <div className="cards" key={genre.id}>
             <h3 className="cardtitle">{genre.nombreGenero}</h3>
             <img src={genre.urlImagen} alt={genre.nombreGenero} className="cardimage" />
-            <button className="modifybutton">Modificar</button>
-            <button className="deletebutton">Eliminar</button>
+            <button className="modifybutton" onClick={() => handleEdit(genre)}>Modificar</button>
+            <button className="deletebutton" onClick={() => handleDelete(genre.id)}>Eliminar</button>
           </div>
         ))}
       </div>
       
-      <button className="createbutton" onClick={handleSelectTab}>Crear nuevo género</button>
-      
-      
+      <button className="createbutton" onClick={handleCreate}>Crear nuevo género</button>
+    
     </div>
+
+    <Outlet />
         </>
   );
 

@@ -1,4 +1,4 @@
-const API_URL_CONTACTS = "https://localhost:7250/api/"
+const API_URL_GENEROS = "https://localhost:7250/api/"
 
 export const getGeneros = () => {
 
@@ -38,18 +38,24 @@ export const deleteGenero = (id) => {
 };
 
 export const updateGenero = (id, genero) => {
-
+    const updatedGenero = { ...genero, Id: id };
+    
     const options = {
         method: 'PUT',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
         },
-        body: JSON.stringify(genero)
-        // body: JSON.stringify({ id, nombreGenero, urlImagen })
-    }
+        body: JSON.stringify(updatedGenero)
+    };
 
-    return fetch((API_URL_GENEROS + "Put/" + id), options)
-        .then((response) => response.json())
+    return fetch(API_URL_GENEROS + "Put", options)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Error en la actualización');
+            }
+            // Solo intenta parsear JSON si el código de estado no es 204 (No Content)
+            return response.status === 204 ? {} : response.json();
+        })
         .catch((error) => {
             console.error('Error PUT', error);
             throw error;

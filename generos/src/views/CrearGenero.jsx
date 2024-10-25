@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addGeneros } from "../controllers/apiController";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import '../App.css';
 
 function CrearGenero() {
