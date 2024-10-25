@@ -1,4 +1,4 @@
-const API_URL_CONTACTS = "https://localhost:7250/api/"
+const API_URL_CONTACTS = "https://earlytealsled0.conveyor.cloud/api/"
 
 export const getGeneros = () => {
 

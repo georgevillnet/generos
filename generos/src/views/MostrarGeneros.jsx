@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { getGeneros } from '../controllers/apiController';
-import '../Card.css';
+import '../App.css';
 
 const GenerosCard = () => {
   const [genres, setGenres] = useState([]);
@@ -19,18 +19,27 @@ const GenerosCard = () => {
 
   return (
     <>
-    {genres.map((genre) => (
-      <div className="card" key={genre.id}>
-      <img src={genre.urlImagen} alt={genre.nombreGenero} className="card-image" />
-      <div className="card-content">
-        <h3 className="card-title">{genre.nombreGenero}</h3>
+    
+    
+    <div className="generoscontainer">
+      <h1 className="titulogeneros">Géneros</h1>
+      
+      <div className="cardcontainer">
+        {genres.map((genre) => (
+          <div className="cards" key={genre.id}>
+            <h3 className="cardtitle">{genre.nombreGenero}</h3>
+            <img src={genre.urlImagen} alt={genre.nombreGenero} className="cardimage" />
+            <button className="modifybutton">Modificar</button>
+            <button className="deletebutton">Eliminar</button>
+          </div>
+        ))}
       </div>
+      
+      <button className="createbutton" onClick={handleSelectTab}>Crear nuevo género</button>
+      
+      
     </div>
-    ))}
-      <button onClick={handleSelectTab}>Crear nuevo género</button>
-
-    <Outlet />
-    </>
+        </>
   );
 };
 
