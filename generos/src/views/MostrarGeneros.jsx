@@ -13,6 +13,10 @@ const GenerosCard = () => {
       .catch(error => console.error('Error fetching genres:', error));
   }, []);
 
+  const handleSelectTab = (key) => {
+    navigate('/crearGenero');
+  };
+
   return (
     <>
     {genres.map((genre) => (
@@ -21,7 +25,7 @@ const GenerosCard = () => {
       <div className="card-content">
         <h3 className="card-title">{genre.nombreGenero}</h3>
       </div>
-      <button>Crear nuevo género</button>
+      <button onClick={handleSelectTab}>Crear nuevo género</button>
     </div>
     ))}
 

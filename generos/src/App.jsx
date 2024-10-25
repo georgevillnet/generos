@@ -4,7 +4,9 @@ import { Tab, Tabs } from 'react-bootstrap';
 import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import './App.css'
-import GenerosCard from './views/MostrarGeneros'
+import GenerosCard from './views/MostrarGeneros';
+import EditarGenero from './views/EditarGenero';
+import CrearGenero from './views/CrearGenero';
 
 function App() {
 
@@ -12,8 +14,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<GenerosCard />} />
-        {/* <Route path="/mostrarNota" element={<ModificarNota />} />
-        <Route path="/crearNota" element={<CrearNota />} /> */}
+        <Route path="/modificarGenero" element={<EditarGenero />} />
+        <Route path="/crearGenero" element={<CrearGenero />} />
       </Routes>
     </>
   )
