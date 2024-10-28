@@ -10,16 +10,21 @@ export const getGeneros = () => {
         });
 };
 
-export const addGeneros = (nombreGenero, urlImagen) => {
+export const addGeneros = (genero) => {
     const options = {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8",
         },
-        body: JSON.stringify(nombreGenero, urlImagen)
-    }
+        body: JSON.stringify(genero) // Esto debe funcionar si 'genero' tiene las propiedades correctas
+    };
     return fetch((API_URL_GENEROS + "Post"), options)
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            return response.json(); // Solo se llama si la respuesta fue correcta
+        })
         .catch((error) => {
             console.error('Error POST', error);
             throw error;
@@ -39,7 +44,7 @@ export const deleteGenero = (id) => {
 
 export const updateGenero = (id, genero) => {
     const updatedGenero = { ...genero, Id: id };
-    
+
     const options = {
         method: 'PUT',
         headers: {

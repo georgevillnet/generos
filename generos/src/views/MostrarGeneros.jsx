@@ -41,7 +41,7 @@ const MostrarGeneros = () => {
         {genres.map((genre) => (
           <div className="cards" key={genre.id}>
             <h3 className="cardtitle">{genre.nombreGenero}</h3>
-            <img src={genre.urlImagen} alt={genre.nombreGenero} className="cardimage" />
+            <img src={`data:image/jpeg;base64,${genre.imagen}`} alt={genre.nombreGenero} className="cardimage" />
             <button className="modifybutton" onClick={() => handleEdit(genre)}>Modificar</button>
             <button className="deletebutton" onClick={() => handleDelete(genre.id)}>Eliminar</button>
           </div>
