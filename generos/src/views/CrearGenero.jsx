@@ -1,57 +1,51 @@
 import { useState } from "react";
 import { addGeneros } from "../controllers/apiController";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import '../App.css';
 
 function CrearGenero() {
-    const [nombreGenero, setNombreGenero] = useState("")
-    const [urlImagen, setUrlImagen] = useState("")
+    const [nombreGenero, setNombreGenero] = useState("");
+    const [urlImagen, setUrlImagen] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         addGeneros({ nombreGenero, urlImagen })
-        .then(() => navigate('/'))
+            .then(() => navigate('/'))
             .catch((error) => console.error('Error al crear un nuevo género', error));
     }
 
     return (
-        <>
-            <Container>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Row>
-                            <Col md={8}>
-                                <Form.Label>Nombre del género</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={nombreGenero}
-                                    onChange={(e) => setNombreGenero(e.target.value)}
-                                    required
-                                />
-                            </Col>
-                            <Col md={4}>
-                                <Form.Label>Url de la imagen </Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={urlImagen}
-                                    onChange={(e) => setUrlImagen(e.target.value)}
-                                    required
-                                />
-                            </Col>
-                        </Row>
-                    </Form.Group>
+        <Container className="text-center">
+        <h1 className="text-center">Crear Nuevo Género</h1>
+        <Form onSubmit={handleSubmit} className="form-container">
+            <Form.Group className="mb-3" controlId="formNombreGenero">
+                <Form.Label>Nombre del género</Form.Label>
+                <Form.Control
+                    type="text"
+                    value={nombreGenero}
+                    onChange={(e) => setNombreGenero(e.target.value)}
+                    required
+                />
+            </Form.Group>
 
-                    <Button variant="primary" type="submit">
-                        Crear
-                    </Button>
-                </Form>
-            </Container>
-        </>
+            <Form.Group className="mb-3" controlId="formUrlImagen">
+                <Form.Label>Url de la imagen</Form.Label>
+                <Form.Control
+                    type="text"
+                    value={urlImagen}
+                    onChange={(e) => setUrlImagen(e.target.value)}
+                    required
+                />
+            </Form.Group>
+
+            <Button variant="dark" type="submit" className="custom-button">
+                Crear
+            </Button>
+        </Form>
+    </Container>
     )
 }
-
-
 
 export default CrearGenero;

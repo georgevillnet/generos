@@ -1,4 +1,4 @@
-const API_URL_GENEROS = "https://localhost:7250/api/"
+const API_URL_GENEROS = "http://localhost:5271/api/"
 
 export const getGeneros = () => {
 
